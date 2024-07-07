@@ -1,8 +1,8 @@
 "use client"
 import { useEffect, useState } from "react";
 import Link from "next/link";
-// import { getBlogs } from "../../../lib/api";
-import { getBlogs } from "https://next-js-sap-blog.vercel.app/Blogs/lib/api";
+import { getBlogs } from "../../../lib/api";
+// import { getBlogs } from "https://next-js-sap-blog.vercel.app/Blogs/lib/api";
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
