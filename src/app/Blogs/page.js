@@ -12,9 +12,13 @@ const Blogs = () => {
 
     const getBlogList = async () => {
         setTimeout(async () => {
-            let blogLists = await getBlogs();
-            setBlogList(JSON.parse(blogLists));
-            setChecked(false);
+            try{
+                let blogLists = await getBlogs();
+                setBlogList(JSON.parse(blogLists));
+                setChecked(false);
+            }catch(error){
+                console.log("Unable to reach to the file.");
+            }
         }, 800)
     }
 
