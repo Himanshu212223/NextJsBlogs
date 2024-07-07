@@ -1,7 +1,8 @@
 "use client"
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { getBlogs } from "../../../lib/api";
+// import { getBlogs } from "../../../lib/api";
+import {getBlogs} from "@/lib/api"
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 
@@ -13,10 +14,11 @@ const Blogs = () => {
     const getBlogList = async () => {
         setTimeout(async () => {
             try{
-                let blogLists = getBlogs();
+                let blogLists = await getBlogs();
                 setBlogList(JSON.parse(blogLists));
                 setChecked(false);
             }catch(error){
+                console.log(error);
                 console.log("Unable to reach to the file.");
             }
         }, 800)
