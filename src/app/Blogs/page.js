@@ -13,7 +13,7 @@ const Blogs = () => {
     const getBlogList = async () => {
         setTimeout(async () => {
             try{
-                let blogLists = await getBlogs();
+                let blogLists = getBlogs();
                 setBlogList(JSON.parse(blogLists));
                 setChecked(false);
             }catch(error){
