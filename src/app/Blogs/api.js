@@ -1,9 +1,12 @@
 "use server"
 import fs from 'fs';
+import path from 'path';
 
 
 export const getBlogs = async () => {
-    let blog = fs.readFileSync('./src/Data/blogs.json', { encoding: 'utf8' });
+    let userspath = path.join(process.cwd(), './src/Data/blogs.json');
+    // let blog = fs.readFileSync('./src/Data/blogs.json', { encoding: 'utf8' });
+    let blog = fs.readFileSync(userspath, { encoding: 'utf8' });
     blog = JSON.parse(blog);
     return JSON.stringify(blog);
 }
